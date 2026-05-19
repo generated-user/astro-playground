@@ -1,78 +1,265 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About Me";
 
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-
-		<h1>About</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="768" height="768" viewBox="0 0 768 768">
-            <defs>
-                <radialGradient id="backlit">
-                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="100%"/>
-                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0%"/>
-                </radialGradient>
-                <radialGradient id="main" fx="0.2" fy="0.2">
-                    <stop offset="0%" stop-color="#FFFFFF"/>
-                    <stop offset="20%" stop-color="#EEFF33"/>
-                    <stop offset="90%" stop-color="#EEFF33"/>
-                    <stop offset="100%" stop-color="#D8A000"/>
-                </radialGradient>
-                <radialGradient id="ray" fx="0.98" fy="0.5">
-                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="100%"/>
-                    <stop offset="30%" stop-color="#FFFFFF" stop-opacity="90%"/>
-                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0%"/>
-                </radialGradient>
-            </defs>
-            <rect width="100%" height="100%" fill="#99DDFF"/>
-            <g transform="translate(512 0)">
-                <path d="M 0,0 l -630.277,-111.135 a 640,640 20 0 0 0 222.27 z" transform="translate(128 128) rotate(0)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="101s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="10s" repeatCount="indefinite"/>
-                </path>
-                <path d="M 0,0 l -618.193,-165.144 a 640,640 30 0 0 0 330.288 z" transform="translate(128 128) rotate(60)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="127s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="11s" repeatCount="indefinite"/>
-                </path>
-                <path d="M 0,0 l -637.565,-55.78 a 640,640 10 0 0 0 111.56 z" transform="translate(128 128) rotate(120)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="95s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="12s" repeatCount="indefinite"/>
-                </path>
-                <path d="M 0,0 l -630.277,-111.135 a 640,640 20 0 0 0 222.27 z" transform="translate(128 128) rotate(180)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="109s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="13s" repeatCount="indefinite"/>
-                </path>
-                <path d="M 0,0 l -637.565,-55.78 a 640,640 10 0 0 0 111.56 z" transform="translate(128 128) rotate(240)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="89s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="14s" repeatCount="indefinite"/>
-                </path>
-                <path d="M 0,0 l -618.193,-165.144 a 640,640 30 0 0 0 330.288 z" transform="translate(128 128) rotate(300)" fill="url(#ray)" fill-opacity="0">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="119s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0.3;0" begin="0s" dur="15s" repeatCount="indefinite"/>
-                </path>
-                <circle cx="128" cy="128" r="96" fill="url(#backlit)"/>
-                <path d="M 0,-128 L 19.7771,-60.8676 L 75.2365,-103.554 L 51.7771,-37.6183 L 121.735,-39.5542 L 64,0 L 121.735,39.5542 L 51.7771,37.6183 L 75.2365,103.554 L 19.7771,60.8676 L 0,128 L -19.7771,60.8676 L -75.2365,103.554 L -51.7771,37.6183 L -121.735,39.5542 L -64,0 L -121.735,-39.5542 L -51.7771,-37.6183 L -75.2365,-103.554 L -19.7771,-60.8676 L 0,-128 z" transform="translate(128 128)" fill="#EEFF88" fill-opacity="0.2">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="scale" values="1 1;0.5 0.5;1 1" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0.1;0.5;0.1" begin="0s" dur="4s" repeatCount="indefinite"/>
-                </path>
-                <path d="M -128,0 L -60.8676,19.7771 L -103.554,75.2365 L -37.6183,51.7771 L -39.5542,121.735 L 0,64 L 39.5542,121.735 L 37.6183,51.7771 L 103.554,75.2365 L 60.8676,19.7771 L 128,0 L 60.8676,-19.7771 L 103.554,-75.2365 L 37.6183,-51.7771 L 39.5542,-121.735 L 0,-64 L -39.5542,-121.735 L -37.6183,-51.7771 L -103.554,-75.2365 L -60.8676,-19.7771 L -128,0 z" transform="translate(128 128)" fill="#EEFF88" fill-opacity="0.2">
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
-                    <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="scale" values="0.5 0.5;1 1;0.5 0.5" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="fill-opacity" additive="sum" attributeType="XML" values="0.5;0.1;0.5" begin="0s" dur="4s" repeatCount="indefinite"/>
-                </path>
-                <circle cx="128" cy="128" fill="url(#main)" r="32"/>
-            </g>
-        </svg>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="768"
+        height="768"
+        viewBox="0 0 768 768"
+    >
+        <defs>
+            <radialGradient id="backlit">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="100%"
+                ></stop>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0%"
+                ></stop>
+            </radialGradient>
+            <radialGradient id="main" fx="0.2" fy="0.2">
+                <stop offset="0%" stop-color="#FFFFFF"></stop>
+                <stop offset="20%" stop-color="#EEFF33"></stop>
+                <stop offset="90%" stop-color="#EEFF33"></stop>
+                <stop offset="100%" stop-color="#D8A000"></stop>
+            </radialGradient>
+            <radialGradient id="ray" fx="0.98" fy="0.5">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="100%"
+                ></stop>
+                <stop offset="30%" stop-color="#FFFFFF" stop-opacity="90%"
+                ></stop>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0%"
+                ></stop>
+            </radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="#99DDFF"></rect>
+        <g transform="translate(512 0)">
+            <path
+                d="M 0,0 l -630.277,-111.135 a 640,640 20 0 0 0 222.27 z"
+                transform="translate(128 128) rotate(0)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="101s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="10s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M 0,0 l -618.193,-165.144 a 640,640 30 0 0 0 330.288 z"
+                transform="translate(128 128) rotate(60)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="127s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="11s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M 0,0 l -637.565,-55.78 a 640,640 10 0 0 0 111.56 z"
+                transform="translate(128 128) rotate(120)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="95s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="12s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M 0,0 l -630.277,-111.135 a 640,640 20 0 0 0 222.27 z"
+                transform="translate(128 128) rotate(180)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="109s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="13s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M 0,0 l -637.565,-55.78 a 640,640 10 0 0 0 111.56 z"
+                transform="translate(128 128) rotate(240)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="89s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="14s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M 0,0 l -618.193,-165.144 a 640,640 30 0 0 0 330.288 z"
+                transform="translate(128 128) rotate(300)"
+                fill="url(#ray)"
+                fill-opacity="0"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="119s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0;0;0;0;0;0;0;0;0;0;0;0;0;0.3;0"
+                    begin="0s"
+                    dur="15s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <circle cx="128" cy="128" r="96" fill="url(#backlit)"></circle>
+            <path
+                d="M 0,-128 L 19.7771,-60.8676 L 75.2365,-103.554 L 51.7771,-37.6183 L 121.735,-39.5542 L 64,0 L 121.735,39.5542 L 51.7771,37.6183 L 75.2365,103.554 L 19.7771,60.8676 L 0,128 L -19.7771,60.8676 L -75.2365,103.554 L -51.7771,37.6183 L -121.735,39.5542 L -64,0 L -121.735,-39.5542 L -51.7771,-37.6183 L -75.2365,-103.554 L -19.7771,-60.8676 L 0,-128 z"
+                transform="translate(128 128)"
+                fill="#EEFF88"
+                fill-opacity="0.2"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="30s"
+                    repeatCount="indefinite"></animateTransform>
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="scale"
+                    values="1 1;0.5 0.5;1 1"
+                    dur="4s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0.1;0.5;0.1"
+                    begin="0s"
+                    dur="4s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <path
+                d="M -128,0 L -60.8676,19.7771 L -103.554,75.2365 L -37.6183,51.7771 L -39.5542,121.735 L 0,64 L 39.5542,121.735 L 37.6183,51.7771 L 103.554,75.2365 L 60.8676,19.7771 L 128,0 L 60.8676,-19.7771 L 103.554,-75.2365 L 37.6183,-51.7771 L 39.5542,-121.735 L 0,-64 L -39.5542,-121.735 L -37.6183,-51.7771 L -103.554,-75.2365 L -60.8676,-19.7771 L -128,0 z"
+                transform="translate(128 128)"
+                fill="#EEFF88"
+                fill-opacity="0.2"
+            >
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="30s"
+                    repeatCount="indefinite"></animateTransform>
+                <animateTransform
+                    attributeName="transform"
+                    additive="sum"
+                    attributeType="XML"
+                    type="scale"
+                    values="0.5 0.5;1 1;0.5 0.5"
+                    dur="4s"
+                    repeatCount="indefinite"></animateTransform>
+                <animate
+                    attributeName="fill-opacity"
+                    additive="sum"
+                    attributeType="XML"
+                    values="0.5;0.1;0.5"
+                    begin="0s"
+                    dur="4s"
+                    repeatCount="indefinite"></animate>
+            </path>
+            <circle cx="128" cy="128" fill="url(#main)" r="32"></circle>
+        </g>
+    </svg>
+</BaseLayout>
